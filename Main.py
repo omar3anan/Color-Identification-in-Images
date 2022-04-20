@@ -1,10 +1,11 @@
 #AUTHOR: Omar Anan Abou-Romia
 #3. Color Identification in Images
 
-
+#Importing the required libraries
 import cv2
 import pandas as pd
-#test
+
+
 # reading image
 #img_path = r"E:\Desktop\SPARK\ColorDetector-main\test1.jpg"
 #img_path = r"E:\Desktop\SPARK\ColorDetector-main\test2.jpg"
@@ -16,11 +17,12 @@ img = cv2.imread(img_path)
 X = Y = r = g = b = 0
 Clicked = False
 
-# read from csv file
+#Reading the .csv file(Containing all the colors,hex,RGB components) and naming the columns
 myArr = ['Color', 'ColorName', 'Hex', 'R', 'G', 'B']
 csv = pd.read_csv('colors.csv', names=myArr)
 
-
+#Function to get the coordinates of the mouse pointer when double clicked on the image
+#Saving the RGB values on those coordinates into the variables
 def draw(event, x, y, flag, param):
     if event == cv2.EVENT_LBUTTONUP:
         global X, Y, r, g, b, Clicked
@@ -32,11 +34,13 @@ def draw(event, x, y, flag, param):
         r = int(r)
         g = int(g)
 
-
+#Creating the window for image
 cv2.namedWindow('ColorDetector')
+#Binding the draw_function to the mouse pointer
 cv2.setMouseCallback('ColorDetector', draw)
 
-
+#Function to compare the RGB values on (x,y) coordinates of the image
+#Returning the color name
 def GetColorName(R, G, B):
     min = 1000000
     for i in range(len(csv)):
@@ -49,7 +53,7 @@ def GetColorName(R, G, B):
 
     return cname
 
-
+#Binding the draw_function to the mouse pointer
 while True:
     cv2.imshow('ColorDetector', img)
 
