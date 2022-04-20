@@ -7,9 +7,9 @@ import pandas as pd
 
 
 # reading image
-img_path = r"E:\Desktop\SPARK\ColorDetector-main\test1.jpg" #test case number 1
-#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test2.jpg"  #test case number 2
-#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test3.jpg"   #test case number 3
+img_path = r"E:\Desktop\SPARK\Color-Identfication\test1.jpg" #test case number 1
+#img_path = r"E:\Desktop\SPARK\Color-Identfication\test2.jpg"  #test case number 2
+#img_path = r"E:\Desktop\SPARK\Color-Identfication\test3.jpg"   #test case number 3
 img = cv2.imread(img_path) 
 #img_resize = cv2.resize(img, (1200, ))
 
