@@ -7,10 +7,10 @@ import pandas as pd
 
 
 # reading image
-img_path = r"E:\Desktop\SPARK\ColorDetector-main\test1.jpg"
-#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test2.jpg"
-#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test3.jpg"
-img = cv2.imread(img_path)
+img_path = r"E:\Desktop\SPARK\ColorDetector-main\test1.jpg" #test case number 1
+#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test2.jpg"  #test case number 2
+#img_path = r"E:\Desktop\SPARK\ColorDetector-main\test3.jpg"   #test case number 3
+img = cv2.imread(img_path) 
 #img_resize = cv2.resize(img, (1200, ))
 
 # declare some global variables
@@ -18,6 +18,7 @@ X = Y = r = g = b = 0
 Clicked = False
 
 #Reading the .csv file(Containing all the colors,hex,RGB components) and naming the columns
+
 myArr = ['Color', 'ColorName', 'Hex', 'R', 'G', 'B']
 csv = pd.read_csv('colors.csv', names=myArr)
 
