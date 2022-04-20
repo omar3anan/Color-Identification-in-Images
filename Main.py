@@ -1,3 +1,7 @@
+#AUTHOR: Omar Anan Abou-Romia
+#3. Color Identification in Images
+
+
 import cv2
 import pandas as pd
 #test
